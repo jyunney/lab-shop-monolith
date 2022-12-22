@@ -10,7 +10,7 @@ import java.util.Date;
 
 
 @FeignClient(name = "inventory", url = "${api.url.inventory}")
-public interface Service {
-    @RequestMapping(method= RequestMethod.PUT, path="/undefined/{id}/decreasestock")
-    public void decreaseStock(@PathVariable("id")  , @RequestBody DecreaseStockCommand decreaseStockCommand );
+public interface InventoryService {
+    @RequestMapping(method= RequestMethod.PUT, path="/inventories/{id}/decreasestock")
+    public void decreaseStock(@PathVariable("id") Long id, @RequestBody DecreaseStockCommand decreaseStockCommand );
 }
